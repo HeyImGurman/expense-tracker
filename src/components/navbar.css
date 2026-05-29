@@ -30,3 +30,8 @@
 .navbar-link {
     color: white;
 }
+
+.navbar-list a {
+    color: white;
+    text-decoration: none;
+}

@@ -1,0 +1,36 @@
+.input-form {
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+
+    height: 100vh;
+    
+}
+
+.input-form input {
+    width: 30rem;
+
+    font-size: 20px;
+}
+
+.add-button {
+    width: 30rem;
+    height: 2rem;
+
+    color: white;
+    background-color: blue;
+
+    border: solid 1px black;
+    border-radius: 50px;
+
+    font-size: 20px;
+    transition: 0.1s ease-in-out;
+}
+
+.add-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 5px 5px 10px 4px rgba(0, 0, 0, 0.269);
+}
