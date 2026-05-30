@@ -1,12 +1,25 @@
 import "./ExpenseForm.css"
-import {useState, useEffect} from "react"
+import { useContext, createContext, useState, useEffect} from "react"
 // component
 
-export default function ExpenseForm() {
+    export default function ExpenseForm() {
     const [title, setTitle] = useState("")
     const [value, setValue] = useState("")
     const [category, setCategory] = useState("")
     const [date, setDate] = useState("")
+
+        function handleClick() {
+
+        e.prevenDefault();
+
+        const newExpense = {
+            title,
+            value,
+            category,
+            date
+        };
+
+    }
     
     return(
         <>
@@ -19,10 +32,12 @@ export default function ExpenseForm() {
 
             <input type="date" value={date} placeholder="date" onChange={(e) => setDate(e.target.value)} />
 
-            <button className="add-button">Add</button>
+            <form className="add-button" onSubmit={ handleClick }>Add</form>
         </form>
         </>
 
     );
+
+    
 }
 

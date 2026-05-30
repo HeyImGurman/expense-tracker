@@ -14,7 +14,7 @@ export default function LandingCard() {
 
             </div>
             <img src={MoneyImg} />
-            </div>
+            </div>  
         </>
     );
 }
