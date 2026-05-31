@@ -1,21 +1,37 @@
-import { useContext, createContext, useState} from "react"
+import {
+   createContext,
+   useContext,
+   useState
+} from "react";
 
 const ExpenseContext = createContext();
 
-export function ExpenseProvider( { children } ){
-        const [expense, setExpense] = useState([]);
+export function ExpenseProvider({ children }) {
 
-        const addExpense = (expense) => {
-            setExpense((prev) => [...prev, expense]);
-        }
+   const [expenses, setExpenses] = useState([]);
+
+   const addExpense = (expense) => {
+
+      console.log("ADDING:", expense);
+
+      setExpenses((prev) => [
+         ...prev,
+         expense
+      ]);
+   };
 
    return (
-      <ExpenseContext.Provider
-         value={{ expense, addExpense }}
-      >
-         {children}
-      </ExpenseContext.Provider>
-   );
-    }
 
-export const useExpenses = () => useContext(ExpenseContext);
+      <ExpenseContext.Provider
+         value={{ expenses, addExpense }}
+      >
+
+         {children}
+
+      </ExpenseContext.Provider>
+
+   );
+}
+
+export const useExpenses = () =>
+   useContext(ExpenseContext);

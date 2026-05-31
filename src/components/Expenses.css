@@ -36,3 +36,7 @@ select {
 .total {
     margin-left: auto;
 }
+
+.red-text {
+    color: red;
+}

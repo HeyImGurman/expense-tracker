@@ -1,8 +1,16 @@
 import "./Expenses.css"
+import { useExpenses } from "./ExpenseContext";
 
 
 export default function Expenses() {
     
+    const { expenses } = useExpenses();
+
+    console.log(expenses);
+
+    const total = expenses.reduce((sum, expense) => {
+    return sum + Number(expense.value);
+    }, 0);
 
     return(
         <>
@@ -17,7 +25,7 @@ export default function Expenses() {
             <option>Others</option>
         </select>
 
-        <p className="total">Total Expenditure :</p>
+        <p className="total">Total Expenditure : <span className="red-text">${total}</span></p>
         </div>
 
         <table className="expense-table">
@@ -32,13 +40,24 @@ export default function Expenses() {
             </thead>
 
             <tbody>
-            <tr>
-            <th scope="row">MacDonalds</th>
-            <td>2000</td>
-            <td>Food</td>
-            <td>22-12-24</td>
-            </tr>
-            </tbody>
+
+                    {expenses.map((expense, index) => (
+
+                        <tr key={index}>
+
+                            <td>{expense.title}</td>
+
+                            <td>{expense.value}</td>
+
+                            <td>{expense.category}</td>
+
+                            <td>{expense.date}</td>
+
+                        </tr>
+
+                    ))}
+
+                </tbody>
 
         </table>
         </>
