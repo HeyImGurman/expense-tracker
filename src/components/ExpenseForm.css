@@ -34,3 +34,35 @@
     transform: translateY(-2px);
     box-shadow: 5px 5px 10px 4px rgba(0, 0, 0, 0.269);
 }
+
+.dropdown-category {
+    width: 30rem;
+    font-size: 20px;
+}
+
+.indicator-box{
+    background-color: rgb(17, 255, 0);
+    height: 2rem;
+    font-size: 14px;
+    color: black;
+
+
+    display: flex;
+    justify-content: left;
+    align-items: center;
+
+    padding-left: 2.5rem;
+}
+
+.indicator-box-error{
+    background-color: rgb(255, 0, 0);
+    height: 2rem;
+    font-size: 14px;
+    color: yellow;
+
+    display: flex;
+    justify-content: left;
+    align-items: center;
+
+    padding-left: 2.5rem;
+}

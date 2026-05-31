@@ -11,6 +11,8 @@ export default function ExpenseForm() {
     const [category, setCategory] = useState("");
     const [date, setDate] = useState("");
 
+    const [show, setShow] = useState(false)
+
     const { addExpense } = useExpenses();
 
     function handleClick(e) {
@@ -24,16 +26,25 @@ export default function ExpenseForm() {
             date
         };
 
-        console.log("FORM SUBMITTED");
-
         addExpense(newExpense);
 
-        console.log(newExpense);
+        setShow(true);
+
+        setTimeout(() => {
+            setShow(false);
+        }, 2000);
+
+        
     }
 
     return (
         <>
-            <form className="input-form">
+            {show && ( 
+            <div className="indicator-box">
+                <p>Expense was added to your list successfully!</p>
+            </div>)}
+          
+            <form className="input-form" onSubmit={handleClick}>
 
                 <input
                     type="text"
@@ -42,6 +53,7 @@ export default function ExpenseForm() {
                     onChange={(e) =>
                         setTitle(e.target.value)
                     }
+                    required
                 />
 
                 <input
@@ -51,16 +63,17 @@ export default function ExpenseForm() {
                     onChange={(e) =>
                         setValue(e.target.value)
                     }
+                    required
                 />
 
-                <input
-                    type="text"
-                    value={category}
-                    placeholder="Category"
-                    onChange={(e) =>
-                        setCategory(e.target.value)
-                    }
-                />
+                <select className="dropdown-category" required value={category} onChange={(e) => setCategory(e.target.value)}>
+                    <option disabled>--Select Category--</option>
+                    <option value="Food">Food</option>
+                    <option value="Clothes">Clothes</option>
+                    <option value="Travel">Travel</option>
+                    <option value="Shopping">Shopping</option>
+                    <option value="Others">Others</option>
+                </select>
 
                 <input
                     type="date"
@@ -68,11 +81,12 @@ export default function ExpenseForm() {
                     onChange={(e) =>
                         setDate(e.target.value)
                     }
+                    required
                 />
 
                 <button
                     className="add-button"
-                    onClick={handleClick}
+                    type="submit"
                 >
                     Add
                 </button>

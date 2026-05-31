@@ -18,6 +18,7 @@ export default function Expenses() {
         <h1>Expenses List</h1>
         <select>
             <option disabled>--Filter Category--</option>
+            <option>All</option>
             <option>Food</option>
             <option>Clothes</option>
             <option>Travel</option>
