@@ -1,16 +1,92 @@
-# React + Vite
+# Expense Tracker App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern React-based Expense Tracker application that allows users to add, organize, and visualize their daily expenses through an interactive and responsive user interface.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+* Add and manage expenses dynamically
+* Categorize expenses
+* View expenses in a structured table
+* Expense visualization using charts and graphs
+* Real-time total expenditure calculation
+* React Context API for global state management
+* Responsive and clean UI design
 
-## React Compiler
+## Tech Stack
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+* React
+* React Router DOM
+* Context API
+* Recharts
+* CSS3
 
-## Expanding the ESLint configuration
+## Project Structure
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+The application is built using a component-based architecture with shared global state management through React Context API.
+
+Key sections include:
+
+* Expense Form
+* Expense Table
+* Expense Graphs
+* Navigation System
+
+## Current Limitations
+
+This project is still under development and some major production features have not been implemented yet.
+
+### Features Not Implemented Yet
+
+* User authentication / Sign In system
+* Settings management
+* Permanent cloud/database storage
+* Backend integration
+
+## Storage Warning
+
+Currently, all expenses are stored only in the browser's temporary local application state.
+
+This means:
+
+* Expenses are NOT stored in a real database
+* Data may reset on browser refresh or application reload
+* Data persistence is not guaranteed yet
+
+A proper storage/database system will be added in future updates.
+
+## Future Improvements
+
+Planned features include:
+
+* MongoDB or SQL database integration
+* User accounts and authentication
+* Expense editing and deletion
+* Persistent local storage
+* Advanced analytics dashboard
+* Better mobile responsiveness
+* Exporting expense reports
+
+## Learning Purpose
+
+This project was primarily built to strengthen understanding of:
+
+* React fundamentals
+* State management
+* Context API
+* Component architecture
+* Dynamic rendering
+* Data visualization
+* Frontend project structuring
+
+## Installation
+
+```bash
+git clone <repository-url>
+cd expense-tracker
+npm install
+npm run dev
+```
+
+## Author
+
+Built as a frontend learning and practice project using React.
