@@ -6,6 +6,7 @@ import YourExpenses from "./pages/YourExpenses";
 import { ExpenseProvider } from "./components/ExpenseContext"
 
 import { Routes, Route } from "react-router-dom";
+import Analytics from "./pages/Analytics";
 
 export default function App() {
 
@@ -32,6 +33,11 @@ export default function App() {
           path="/expenses"
           element={<YourExpenses />}
         />
+
+        <Route 
+          path="/analytics"
+          element={<Analytics />}
+        />      
 
       </Routes>
       </div>

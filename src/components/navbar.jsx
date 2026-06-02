@@ -23,7 +23,7 @@ export default function Navbar() {
                 </li>
 
                 <li className="navbar-link">
-                    <Link to="/">Analytics</Link>
+                    <Link to="/analytics">Analytics</Link>
                 </li>
 
                 <li className="navbar-link">

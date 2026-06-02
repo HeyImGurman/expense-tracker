@@ -1,10 +1,13 @@
 import "./Expenses.css"
 import { useExpenses } from "./ExpenseContext";
+import { useState } from "react";
+
 
 
 export default function Expenses() {
     
     const { expenses } = useExpenses();
+    const [category , setCategory] = useState("All")
 
     console.log(expenses);
 
@@ -12,18 +15,26 @@ export default function Expenses() {
     return sum + Number(expense.value);
     }, 0);
 
+   const filteredExpenses = expenses.filter((expense) => {
+
+    if (category === "All") {
+        return true;
+    }
+
+    return expense.category === category;
+    });
+
     return(
         <>
         <div className="table-heading">
         <h1>Expenses List</h1>
-        <select>
-            <option disabled>--Filter Category--</option>
-            <option>All</option>
-            <option>Food</option>
-            <option>Clothes</option>
-            <option>Travel</option>
-            <option>Shopping</option>
-            <option>Others</option>
+        <select value={category} onChange={(e) => setCategory(e.target.value)}>
+            <option value="All">All</option>
+            <option value="Food">Food</option>
+            <option value="Clothes">Clothes</option>
+            <option value="Travel">Travel</option>
+            <option value="Shopping">Shopping</option>
+            <option value="Others">Others</option>
         </select>
 
         <p className="total">Total Expenditure : <span className="red-text">${total}</span></p>
@@ -42,7 +53,7 @@ export default function Expenses() {
 
             <tbody>
 
-                    {expenses.map((expense, index) => (
+                    {filteredExpenses.map((expense, index) => (
 
                         <tr key={index}>
 

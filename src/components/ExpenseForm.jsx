@@ -67,7 +67,7 @@ export default function ExpenseForm() {
                 />
 
                 <select className="dropdown-category" required value={category} onChange={(e) => setCategory(e.target.value)}>
-                    <option disabled>--Select Category--</option>
+                    <option>--Select Category--</option>
                     <option value="Food">Food</option>
                     <option value="Clothes">Clothes</option>
                     <option value="Travel">Travel</option>
